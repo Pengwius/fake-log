@@ -5,7 +5,7 @@ const protocol = require('../utils/connection');
 router.get("/powiatwulkanowy/Start.mvc/Endpoints", (req, res) => {
     const base = protocol(req) + "://" + req.get('host') + "/powiatwulkanowy/Start.mvc";
     res.json({
-        status: "sucess",
+        status: "success",
         data: {
             endpoints: [
                 "/GetSelfGovernments",
@@ -17,6 +17,8 @@ router.get("/powiatwulkanowy/Start.mvc/Endpoints", (req, res) => {
                 "/GetLastHomeworks",
                 "/GetLastTests",
                 "/GetLastStudentLessons",
+                "/GetStudentDirectorInformations",
+                "/GetStudentConferences",
             ].map(item => {
                 return base + item;
             })
@@ -82,6 +84,24 @@ router.all("/powiatwulkanowy/Start.mvc/GetLastTests", (req, res) => {
 });
 
 router.all("/powiatwulkanowy/Start.mvc/GetLastStudentLessons", (req, res) => {
+    res.json({
+        "data": [],
+        "success": false,
+        "errorMessage": "Not implemented yet",
+        "feedback": null
+    });
+});
+
+router.all("/powiatwulkanowy/Start.mvc/GetStudentDirectorInformations", (req, res) => {
+    res.json({
+        "data": [],
+        "success": false,
+        "errorMessage": "Not implemented yet",
+        "feedback": null
+    });
+});
+
+router.all("/powiatwulkanowy/Start.mvc/GetStudentConferences", (req, res) => {
     res.json({
         "data": [],
         "success": false,
